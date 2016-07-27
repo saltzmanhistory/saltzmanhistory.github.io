@@ -453,8 +453,8 @@ body {
 
 .family-tree {
   position: absolute;
-  left: 200px;
-  right: 0;
+  left: 0;
+  right: 400px;
   bottom: 0;
   top: 0;
 }
@@ -477,6 +477,36 @@ body {
   fill: none;
   stroke: #ccc;
   stroke-width: 2px;
+}
+
+.family-detail {
+  width: 400px;
+  background-color: white;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-left: 1px solid #e1e3e9;
+  box-shadow: 0 0 10px #EEEFF2;
+  overflow-y: auto;
+}
+
+.family-detail-profile {
+  margin: 0 auto;
+  display: block;
+  width: 400px;
+}
+
+.family-detail-name {
+  padding-left: 30px;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.family-detail-bio {
+  line-height: 1.5;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .inpt {

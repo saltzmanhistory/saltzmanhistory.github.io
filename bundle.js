@@ -34339,6 +34339,36 @@ module.exports = warning;
 
 }).call(this,require('_process'))
 },{"_process":50}],230:[function(require,module,exports){
+"use strict";
+
+var React = require('react');
+
+var FamilyDetail = React.createClass({
+  displayName: "FamilyDetail",
+
+
+  render: function render() {
+    return React.createElement(
+      "div",
+      { className: "family-detail" },
+      React.createElement("img", { className: "family-detail-profile", src: "http://placehold.it/600x400" }),
+      React.createElement(
+        "h3",
+        { className: "family-detail-name" },
+        "Philip Davis"
+      ),
+      React.createElement(
+        "article",
+        { className: "family-detail-bio" },
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      )
+    );
+  }
+
+});
+
+module.exports = FamilyDetail;
+},{"react":227}],231:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -34350,31 +34380,7 @@ var FamilyTree = React.createClass({
 
 
   componentDidMount: function componentDidMount() {
-    var treeData = [{
-      "name": "Top Level",
-      "parent": "null",
-      "children": [{
-        "name": "Level 2: A",
-        "parent": "Top Level",
-        "children": [{
-          "name": "Son of A",
-          "parent": "Level 2: A",
-          "children": [{
-            "name": "Son of A",
-            "parent": "Level 2: A"
-          }, {
-            "name": "Daughter of A",
-            "parent": "Level 2: A"
-          }]
-        }, {
-          "name": "Daughter of A",
-          "parent": "Level 2: A"
-        }]
-      }, {
-        "name": "Level 2: B",
-        "parent": "Top Level"
-      }]
-    }];
+    var treeData = this.props.data;
 
     // ************** Generate the tree diagram	 *****************
     var margin = { top: 20, right: 120, bottom: 20, left: 120 },
@@ -34505,7 +34511,7 @@ var FamilyTree = React.createClass({
 });
 
 module.exports = FamilyTree;
-},{"d3":1,"react":227}],231:[function(require,module,exports){
+},{"d3":1,"react":227}],232:[function(require,module,exports){
 'use strict';
 
 var React = require("react");
@@ -34549,12 +34555,12 @@ var FilterableList = React.createClass({
 });
 
 module.exports = FilterableList;
-},{"react":227}],232:[function(require,module,exports){
+},{"react":227}],233:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
-var FilterableList = require('../components/filterable-list');
 var FamilyTree = require('../components/family-tree');
+var FamilyDetail = require('../components/family-detail');
 var DATA = require('../data');
 var PropTypes = React.PropTypes;
 
@@ -34566,83 +34572,99 @@ var Homepage = React.createClass({
     return React.createElement(
       'div',
       null,
-      React.createElement(FilterableList, { data: DATA }),
-      React.createElement(FamilyTree, null)
+      React.createElement(FamilyTree, { data: DATA }),
+      React.createElement(FamilyDetail, null)
     );
   }
 
 });
 
 module.exports = Homepage;
-},{"../components/family-tree":230,"../components/filterable-list":231,"../data":233,"react":227}],233:[function(require,module,exports){
+},{"../components/family-detail":230,"../components/family-tree":231,"../data":234,"react":227}],234:[function(require,module,exports){
 "use strict";
 
 module.exports = [{
-  "Name": "Josiah Davis",
-  "Date of Birth": "11/4/1987",
-  "Date of Death": "N/A",
-  "Place of Birth": "Arlington, VA",
-  "Place of Death": "N/A",
-  "Photo": "http://placehold.it/150x150",
-  "Bio": "Josiah Davis is the firstborn member of the Davis Family"
-}, {
-  "Name": "Philip Davis",
-  "Date of Birth": "8/5/1990",
-  "Date of Death": "N/A",
-  "Place of Birth": "Arlington, VA",
-  "Place of Death": "N/A",
-  "Photo": "http://placehold.it/150x151",
-  "Bio": "Philip Davis is the secondborn member of the Davis Family"
-}, {
-  "Name": "Seth Davis",
-  "Date of Birth": "2/10/1993",
-  "Date of Death": "N/A",
-  "Place of Birth": "Grand Prarie, TX",
-  "Place of Death": "N/A",
-  "Photo": "http://placehold.it/150x152",
-  "Bio": "Seth Davis is the third member of the Davis Family"
-}, {
-  "Name": "Keilah Davis",
-  "Date of Birth": "10/19/1996",
-  "Date of Death": "N/A",
-  "Place of Birth": "Grand Prarie, TX",
-  "Place of Death": "N/A",
-  "Photo": "http://placehold.it/150x153",
-  "Bio": "Keilah Davis is the fourth member of the Davis Family"
-}, {
-  "Name": "Nathanael Davis",
-  "Date of Birth": "3/6/1999",
-  "Date of Death": "N/A",
-  "Place of Birth": "Dallas, TX",
-  "Place of Death": "N/A",
-  "Photo": "http://placehold.it/150x154",
-  "Bio": "Nathanel Davis likes to go by Nathan"
-}, {
-  "Name": "Martha Davis",
-  "Date of Birth": "3/12/2001",
-  "Date of Death": "N/A",
-  "Place of Birth": "Dallas, TX",
-  "Place of Death": "N/A",
-  "Photo": "http://placehold.it/150x155",
-  "Bio": "Martha likes to read"
-}, {
-  "Name": "Adam Davis",
-  "Date of Birth": "2/2/2005",
-  "Date of Death": "N/A",
-  "Place of Birth": "Arlington, VA",
-  "Place of Death": "N/A",
-  "Photo": "http://placehold.it/150x156",
-  "Bio": "Adam is artistic"
-}, {
-  "Name": "Sam Davis",
-  "Date of Birth": "8/16/2008",
-  "Date of Death": "N/A",
-  "Place of Birth": "Arlington, VA",
-  "Place of Death": "N/A",
-  "Photo": "http://placehold.it/150x157",
-  "Bio": "Sam likes to write letters"
+  "name": "Pierre and Anna",
+  "parent": "null",
+  "children": [{
+    "name": "Henry and Catherine",
+    "parent": "Pierre and Anna",
+    "bio": "Heinrich (Henry) Saltzman was born in 1851 in Lafrimbolle, France. His father, Pierre Saltzman, was a miller and was killed whn he was caught in a belt of the mill. Henry was 16 when his father was killed. Henry's mother, Anna Reschly Saltzman, continued to lvie in the Lafrainbal area where she ran a small inn for travelers on the thoroughfare to Paris. Henry left France to come to America in the early 1870's. He married Catherine (Katie) Stieder March 15, 1885. Katie was born at Metamora, Illinois, an early Mennonute settlement, on May 1, 1864. She moved to Nebraska in her youth. Henry and Katie were married in Seward County, Nebraska. In 1892 they and their four children moved to the Shickley area and settled on a farm they purchased for $4500. Henry died July 10 1919 at the age of 68 after a 5 day illness of paralysis. Katie moved to Milford in 1925 and lived with her daughter, Mary Steckley, until her death on June 21, 1952 at the age of 88. Burial site of Henry and Katie Saltzman is Salem Mennonite Cemetary at Shickley, Nebraska.",
+    "image": "images/henry_catherine_saltzman.png",
+    "children": [{
+      "name": "Peter and Elizabeth",
+      "parent": "Henry and Catherine",
+      "image": "images/peter_and_elizabeth.png"
+    }, {
+      "name": "Joseph",
+      "parent": "Henry and Catherine"
+    }, {
+      "name": "Elizabeth and Jacob",
+      "parent": "Henry and Catherine",
+      "image": "images/elizabeth_and_jacob.png"
+    }, {
+      "name": "Daniel",
+      "parent": "Henry and Catherine",
+      "image": "images/daniel_and_hellen.png"
+    }, {
+      "name": "Mary and Jonathan",
+      "parent": "Henry and Catherine",
+      "image": "images/mary_and_jonathan.png"
+    }, {
+      "name": "William and Rosa",
+      "parent": "Henry and Catherine",
+      "image": "images/william_and_rosa.png"
+    }, {
+      "name": "Jess and Edith",
+      "parent": "Henry and Catherine"
+    }, {
+      "name": "Lamar",
+      "parent": "Henry and Catherine"
+    }, {
+      "name": "Harvey and Sarrah",
+      "parent": "Henry and Catherine"
+    }, {
+      "name": "Alvin and Emma",
+      "parent": "Henry and Catherine",
+      "bio": "Alvin Saltzman was born in Shickley, Nebraska on June 13th, 1906, the youngest of ten children. Alvin and Emma Saltzman were married in Milford on December 31, 1925. They farmed and lived near Shickley for eight years. They had 3 children, Burdette, Lila and Galen during this time. In 1933 they moved to the Milford area. Alvin worked for Rediger Feed Store in Milford for a number of years. He finished his working years at the Hughs Brothers Luber Co. of Seward for his last 23 years. At this time he retired in Milford. Emma worked for the Lincold Telephone Co. in Milford and also for George Phipps in the restaurant business. Alvin is presently living in the Crestview Nursing Home in Milford. Alvin and Emma have been married for 68 years. Emma passed away on June 6, 1994 at the age of 90. Alvin passed away on May 13, 1995 at the age of 89.",
+      "image": "images/alvin_and_emma.png",
+      "children": [{
+        "name": "Burdette and Betty",
+        "parent": "Alvin and Emma"
+      }, {
+        "name": "Lila and Virgil",
+        "parent": "Alvin and Emma"
+      }, {
+        "name": "Galen and Virginia",
+        "parent": "Alvin and Emma",
+        "image": "images/galen_and_virginia.jpg",
+        "children": [{
+          "name": "Kaye and Robin",
+          "parent": "Galen and Virginia"
+        }, {
+          "name": "Kris and David",
+          "parent": "Galen and Virginia"
+        }, {
+          "name": "Trece and James",
+          "parent": "Galen and Virginia"
+        }, {
+          "name": "Mark and Cheryl",
+          "parent": "Galen and Virginia"
+        }]
+      }]
+    }]
+  }, {
+    "name": "Anna",
+    "parent": "Pierre and Anna"
+  }, {
+    "name": "Andre",
+    "parent": "Pierre and Anna"
+  }, {
+    "name": "Catherine",
+    "parent": "Pierre and Anna"
+  }]
 }];
-},{}],234:[function(require,module,exports){
+},{}],235:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -34673,4 +34695,4 @@ var App = React.createClass({
 });
 
 ReactDOM.render(React.createElement(App, null), document.getElementById('main'));
-},{"./components/filterable-list":231,"./containers/homepage":232,"./data":233,"react":227,"react-dom":52,"react-router":82}]},{},[234]);
+},{"./components/filterable-list":232,"./containers/homepage":233,"./data":234,"react":227,"react-dom":52,"react-router":82}]},{},[235]);
