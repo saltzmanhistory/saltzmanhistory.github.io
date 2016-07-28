@@ -34348,19 +34348,20 @@ var FamilyDetail = React.createClass({
 
 
   render: function render() {
+    var person = this.props.selectedFamilyMember;
     return React.createElement(
       "div",
       { className: "family-detail" },
-      React.createElement("img", { className: "family-detail-profile", src: "http://placehold.it/600x400" }),
+      React.createElement("img", { className: "family-detail-profile", src: "img/" + person.image }),
       React.createElement(
         "h3",
         { className: "family-detail-name" },
-        "Philip Davis"
+        person.name
       ),
       React.createElement(
         "article",
         { className: "family-detail-bio" },
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        person.bio
       )
     );
   }
@@ -34381,6 +34382,7 @@ var FamilyTree = React.createClass({
 
   componentDidMount: function componentDidMount() {
     var treeData = this.props.data;
+    var selectNode = this.props.selectNode;
 
     // ************** Generate the tree diagram	 *****************
     var margin = { top: 20, right: 120, bottom: 20, left: 120 },
@@ -34489,14 +34491,7 @@ var FamilyTree = React.createClass({
 
     // Toggle children on click.
     function click(d) {
-      if (d.children) {
-        d._children = d.children;
-        d.children = null;
-      } else {
-        d.children = d._children;
-        d._children = null;
-      }
-      update(d);
+      selectNode(d);
     }
   },
 
@@ -34566,14 +34561,25 @@ var PropTypes = React.PropTypes;
 
 var Homepage = React.createClass({
   displayName: 'Homepage',
+  getInitialState: function getInitialState() {
+    return {
+      person: ""
+    };
+  },
+  selectNode: function selectNode(d) {
+    this.setState({
+      person: d
+    });
+  },
 
 
   render: function render() {
+
     return React.createElement(
       'div',
       null,
-      React.createElement(FamilyTree, { data: DATA }),
-      React.createElement(FamilyDetail, null)
+      React.createElement(FamilyTree, { selectNode: this.selectNode, data: DATA }),
+      React.createElement(FamilyDetail, { selectedFamilyMember: this.state.person })
     );
   }
 
@@ -34590,30 +34596,30 @@ module.exports = [{
     "name": "Henry and Catherine",
     "parent": "Pierre and Anna",
     "bio": "Heinrich (Henry) Saltzman was born in 1851 in Lafrimbolle, France. His father, Pierre Saltzman, was a miller and was killed whn he was caught in a belt of the mill. Henry was 16 when his father was killed. Henry's mother, Anna Reschly Saltzman, continued to lvie in the Lafrainbal area where she ran a small inn for travelers on the thoroughfare to Paris. Henry left France to come to America in the early 1870's. He married Catherine (Katie) Stieder March 15, 1885. Katie was born at Metamora, Illinois, an early Mennonute settlement, on May 1, 1864. She moved to Nebraska in her youth. Henry and Katie were married in Seward County, Nebraska. In 1892 they and their four children moved to the Shickley area and settled on a farm they purchased for $4500. Henry died July 10 1919 at the age of 68 after a 5 day illness of paralysis. Katie moved to Milford in 1925 and lived with her daughter, Mary Steckley, until her death on June 21, 1952 at the age of 88. Burial site of Henry and Katie Saltzman is Salem Mennonite Cemetary at Shickley, Nebraska.",
-    "image": "images/henry_catherine_saltzman.png",
+    "image": "henry_catherine_saltzman.png",
     "children": [{
       "name": "Peter and Elizabeth",
       "parent": "Henry and Catherine",
-      "image": "images/peter_and_elizabeth.png"
+      "image": "peter_and_elizabeth.png"
     }, {
       "name": "Joseph",
       "parent": "Henry and Catherine"
     }, {
       "name": "Elizabeth and Jacob",
       "parent": "Henry and Catherine",
-      "image": "images/elizabeth_and_jacob.png"
+      "image": "elizabeth_and_jacob.png"
     }, {
       "name": "Daniel",
       "parent": "Henry and Catherine",
-      "image": "images/daniel_and_hellen.png"
+      "image": "daniel_and_hellen.png"
     }, {
       "name": "Mary and Jonathan",
       "parent": "Henry and Catherine",
-      "image": "images/mary_and_jonathan.png"
+      "image": "mary_and_jonathan.png"
     }, {
       "name": "William and Rosa",
       "parent": "Henry and Catherine",
-      "image": "images/william_and_rosa.png"
+      "image": "william_and_rosa.png"
     }, {
       "name": "Jess and Edith",
       "parent": "Henry and Catherine"
@@ -34627,7 +34633,7 @@ module.exports = [{
       "name": "Alvin and Emma",
       "parent": "Henry and Catherine",
       "bio": "Alvin Saltzman was born in Shickley, Nebraska on June 13th, 1906, the youngest of ten children. Alvin and Emma Saltzman were married in Milford on December 31, 1925. They farmed and lived near Shickley for eight years. They had 3 children, Burdette, Lila and Galen during this time. In 1933 they moved to the Milford area. Alvin worked for Rediger Feed Store in Milford for a number of years. He finished his working years at the Hughs Brothers Luber Co. of Seward for his last 23 years. At this time he retired in Milford. Emma worked for the Lincold Telephone Co. in Milford and also for George Phipps in the restaurant business. Alvin is presently living in the Crestview Nursing Home in Milford. Alvin and Emma have been married for 68 years. Emma passed away on June 6, 1994 at the age of 90. Alvin passed away on May 13, 1995 at the age of 89.",
-      "image": "images/alvin_and_emma.png",
+      "image": "alvin_and_emma.png",
       "children": [{
         "name": "Burdette and Betty",
         "parent": "Alvin and Emma"
@@ -34637,7 +34643,7 @@ module.exports = [{
       }, {
         "name": "Galen and Virginia",
         "parent": "Alvin and Emma",
-        "image": "images/galen_and_virginia.jpg",
+        "image": "galen_and_virginia.jpg",
         "children": [{
           "name": "Kaye and Robin",
           "parent": "Galen and Virginia"
