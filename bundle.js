@@ -34351,8 +34351,13 @@ var FamilyDetail = React.createClass({
     var person = this.props.selectedFamilyMember;
     return React.createElement(
       "div",
-      { className: "family-detail" },
+      { className: "family-detail " + (this.props.isDisplayOpen ? "" : "family-detail-closed") },
       React.createElement("img", { className: "family-detail-profile", src: "img/" + person.image }),
+      React.createElement(
+        "a",
+        { onClick: this.props.hidePanel },
+        "Hide"
+      ),
       React.createElement(
         "h3",
         { className: "family-detail-name" },
@@ -34491,6 +34496,10 @@ var FamilyTree = React.createClass({
 
     // Toggle children on click.
     function click(d) {
+      d3.selectAll(".node text").style("opacity", ".5");
+
+      d3.select(this).select("text").style("opacity", 1);
+
       selectNode(d);
     }
   },
@@ -34563,12 +34572,19 @@ var Homepage = React.createClass({
   displayName: 'Homepage',
   getInitialState: function getInitialState() {
     return {
-      person: ""
+      person: "",
+      isDisplayOpen: false
     };
+  },
+  hidePanel: function hidePanel() {
+    this.setState({
+      isDisplayOpen: false
+    });
   },
   selectNode: function selectNode(d) {
     this.setState({
-      person: d
+      person: d,
+      isDisplayOpen: true
     });
   },
 
@@ -34579,7 +34595,11 @@ var Homepage = React.createClass({
       'div',
       null,
       React.createElement(FamilyTree, { selectNode: this.selectNode, data: DATA }),
-      React.createElement(FamilyDetail, { selectedFamilyMember: this.state.person })
+      React.createElement(FamilyDetail, {
+        selectedFamilyMember: this.state.person,
+        hidePanel: this.hidePanel,
+        isDisplayOpen: this.state.isDisplayOpen
+      })
     );
   }
 

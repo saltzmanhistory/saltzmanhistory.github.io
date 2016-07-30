@@ -489,6 +489,12 @@ body {
   border-left: 1px solid #e1e3e9;
   box-shadow: 0 0 10px #EEEFF2;
   overflow-y: auto;
+  -webkit-transition: 0.3s all ease-out;
+  transition: 0.3s all ease-out;
+}
+
+.family-detail-closed {
+  right: -400px;
 }
 
 .family-detail-profile {
