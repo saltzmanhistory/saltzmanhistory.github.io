@@ -35920,34 +35920,45 @@ module.exports = [{
     "children": [{
       "name": "Peter and Elizabeth",
       "parent": "Henry and Catherine",
+      "bio": "Peter Saltzman was born January 19, 1887 at Milford, Nebraska. His family moved to Shickley, Nebraska when he was about two year old. He met and married Elizabeth Reeb who was born in Illinois on June 18, 1889. They were married December 23, 1909. She was one of four children who moved from Illinois to the Martland area. They lived most of their married life on the farm purchased by Peter's father (Henry) when he first moved to Shickley. They moved to the town of Shickley in 1953 and lived there until Lizzie's death in 1959 and Peter's in 1969. Peter was a farmer and after moving to town still enjoyed gardening.",
       "image": "peter_and_elizabeth.png"
     }, {
       "name": "Joseph",
-      "parent": "Henry and Catherine"
+      "parent": "Henry and Catherine",
+      "bio": "Joseph was born on January 17, 1887 and tragically died less than two months later, on March 1887."
     }, {
       "name": "Elizabeth and Jacob",
       "parent": "Henry and Catherine",
+      "bio": "Jacob and Elizabeth Kennel moved from Shickley, Nebraska to Limon, Colorado in the spring of 1931. They farmed several hundred acres, and also raised beef and mile cows. Since this was during the dust storm period, it seemed like we were living in the middle of the dust bowl. After surviving five years in Colorado, they moved to Nampa, Idaho and continued farming Dad had planned to retire after the summer of 1948 at age 69. Unfortunately he was killed in a farm accident in July 1948 before realizing his dream of operating a small country store close to where they lived on the edge of town. Elizabeth continued to live in Nampa until she moved to the Mennonite Home in Albany, Oregon in 1970 where she passed away January 18, 1973.",
       "image": "elizabeth_and_jacob.png"
     }, {
-      "name": "Daniel",
+      "name": "Daniel and Hellen",
       "parent": "Henry and Catherine",
+      "bio": "Daniel Saltzman was born on August 29, 1889 to Henry and Katherine Stieder Saltzman in Milford Nebraska. On December 25, 1912 he was married to Helen Sutter. They lived in the Shickley area until moving to Keota, Iowa in 1937. In 1957 they moved to Wellman, Iowa. Daniel farmed while living in Nebraska and later did lawn mowing and various jobs. Daniel and Helen had six children: Elmer, Harold, Mary, Wilfred, Vera and Joseph. Daniel passed away February 7, 1971 and Helen on May 6, 1986.",
       "image": "daniel_and_hellen.png"
     }, {
       "name": "Mary and Jonathan",
+      "bio": "Mary Saltzman & Jonathan Steckly were married at the Mennonite Church near Shickley on February 13, 1913. Their first home was on a farm near Milford, Nebraska. Their daughter Themla was born on February 18, 1915. Luella was born on January 8, 1920, and Doreta was born on October 28, 1926. Grandma Saltzman came to live with them in 1926, and lived there until her death in 1952. Later John wasn't as interested in farming so they rented out the farm and moved to Milford. There they operated a grocery store. Later they moved back to the farm for a few months while Luella & Thelma took care of the store. John developed heart problems and died on December 21, 1951. Since Thelma (Cooley) was living in California, Luella (Arends) and Mary moved there also in 1952. Doretta (Seely) remained in Nebraska after her marrieage in 1952, living in the Grand Island. Mary Steckly died on June 18, 1972.",
       "parent": "Henry and Catherine",
       "image": "mary_and_jonathan.png"
     }, {
       "name": "William and Rosa",
+      "bio": "William Saltzman and Rosa Meta Kennel were married November 13, 1917 at Shickley, Nebraska. They lived on a farm in Shickley where their children Dale, Dorothy, Mabel, Mildred, Ethel, Inez, Juantia, and Rosella were born. In 1931 they moved to a farm south west of Limon, Colorado. This is where Richard, Melba, Larry and James were born. Moving into Limon in 1944 William worked at various jobs and Rosa started her 18 year career as a cook at local cafes. They moved to the Good Samaritan Center a Simla, Colorado in 1971 making this their home until their deaths: William in April 1982 and Rosa in March 1984.",
       "parent": "Henry and Catherine",
       "image": "william_and_rosa.png"
     }, {
       "name": "Jess and Edith",
-      "parent": "Henry and Catherine"
+      "bio": "Jess was born in Shickley, Nebraska in 1895. He served in the Army during World War I. While in France he visited his father's old home and family n the area. Jess and Edith married in 1924 and lived on a farm in the Shickley area. They moved to Beatrice, Nebraska in 1934 and remained there. Jess retired in 1958 and enjoyed fishing.",
+      "parent": "Henry and Catherine",
+      "image": "jess_and_edith.png"
+    }, {
+      "name": "Harvey and Sarah",
+      "parent": "Henry and Catherine",
+      "bio": "Harvey Saltzman was born October 11, 1898 in Shickley, Nebraska. He was of the Mennonite faith. He always said that he was of the Pennsylvania Dutch. His given name was Harvey Alvin, although he never would tell us what the 'A' stood for. I later found out it was Alvin. He met and married Sarah Sophia Merritt in 1921 on thd 2nd of August. The first child born was Leona Pearl. Then followed the twins Lester Harvey and Chester Harvey, Howard Leroy, Dwight wh odied at the age of 5 of Diptheria, Herman Eugene, Roberta Maxine, Leland Dean, Rupert Darwin, Shirley Macine, Robert Laurence and Jerry. Harvey moved many times having lived in Endicottt, Fairbury, Strang, Grafton, Martland, Ohioway, Geneva and from there they moved to Denver Colorado. Harvey passed away in 1962.",
+      "image": "harvey_sarah.png"
     }, {
       "name": "Lamar",
-      "parent": "Henry and Catherine"
-    }, {
-      "name": "Harvey and Sarrah",
+      "bio": "Lamar was born on June 15, 1897 and tragically died the same year, on December 18th.",
       "parent": "Henry and Catherine"
     }, {
       "name": "Alvin and Emma",
