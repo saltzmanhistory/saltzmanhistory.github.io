@@ -454,7 +454,7 @@ body {
 .family-tree {
   position: absolute;
   left: 0;
-  right: 400px;
+  right: 500px;
   bottom: 0;
   top: 0;
 }
@@ -480,7 +480,7 @@ body {
 }
 
 .family-detail {
-  width: 400px;
+  width: 500px;
   background-color: white;
   position: absolute;
   right: 0;
@@ -494,13 +494,29 @@ body {
 }
 
 .family-detail-closed {
-  right: -400px;
+  right: -500px;
+}
+
+.family-detail-hide {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  fill: white;
+  border-radius: 100px;
+  background-color: rgba(0,0,0, 0.4);
+  padding: 4px;
+  cursor: pointer;
 }
 
 .family-detail-profile {
   margin: 0 auto;
   display: block;
-  width: 400px;
+  width: 100%;
+  height: 400px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 0% 0%;
+     object-position: 0% 0%;
 }
 
 .family-detail-name {
