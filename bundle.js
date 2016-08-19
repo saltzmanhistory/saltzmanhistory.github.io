@@ -35735,7 +35735,7 @@ var FamilyTree = React.createClass({
     var selectNode = this.props.selectNode;
 
     // ************** Generate the tree diagram	 *****************
-    var margin = { top: 20, right: 120, bottom: 20, left: 120 },
+    var margin = { top: 20, right: 120, bottom: 20, left: 140 },
         width = 960 - margin.right - margin.left,
         height = 500 - margin.top - margin.bottom;
 
@@ -35852,7 +35852,7 @@ var FamilyTree = React.createClass({
   render: function render() {
     return React.createElement(
       'div',
-      { className: 'family-tree' },
+      { className: 'family-tree ' + (this.props.isDisplayOpen ? "" : "family-tree-full") },
       React.createElement('div', { className: 'family-tree-chart' })
     );
   }
@@ -35939,7 +35939,11 @@ var Homepage = React.createClass({
     return React.createElement(
       'div',
       null,
-      React.createElement(FamilyTree, { selectNode: this.selectNode, data: DATA }),
+      React.createElement(FamilyTree, {
+        selectNode: this.selectNode,
+        data: DATA,
+        isDisplayOpen: this.state.isDisplayOpen
+      }),
       React.createElement(FamilyDetail, {
         selectedFamilyMember: this.state.person,
         hidePanel: this.hidePanel,
